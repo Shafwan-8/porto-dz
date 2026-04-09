@@ -13,7 +13,7 @@ const closeMenu = () => {
   <!-- Navbar -->
   <header class="w-full max-w-7xl px-8 py-5 flex justify-between items-center fixed top-0 z-50 backdrop-blur-md bg-[#fafafa]/80">
     <div class="flex items-center relative z-20">
-      <img src="@/assets/images/logo 1.png" alt="DZXY" class="h-12 w-auto" />
+      <img src="@/assets/images/logo_1.png" alt="DZXY" class="h-12 w-auto" />
     </div>
     
     <!-- Desktop Navigation -->
