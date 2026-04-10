@@ -102,7 +102,7 @@
                 </div>
                 <!-- Stat 2 -->
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
-                    <h3 class="text-2xl font-black">67+</h3>
+                    <h3 class="text-2xl font-black">500+</h3>
                     <p class="text-sm font-medium text-gray-400 mt-1">Skins created</p>
                 </div>
             </div>
