@@ -35,7 +35,7 @@ import { RouterLink } from 'vue-router'
 
     <!-- Right Section: Graphic/Logo -->
     <div class="flex-1 flex justify-center  mb-10 md:mb-0">
-      <img src="@/assets/images/logo 1.png" alt="DZXY" class="w-40 sm:w-50 md:w-64 lg:w-[250px] object-contain drop-shadow-sm" />
+      <img src="@/assets/images/logo_1.png" alt="DZXY" class="w-40 sm:w-50 md:w-64 lg:w-[250px] object-contain drop-shadow-sm" />
     </div>
 
   </div>
