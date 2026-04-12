@@ -15,6 +15,13 @@ router.beforeEach((to, from) => {
   transitionName.value = toOrder > fromOrder ? 'slide-left' : 'slide-right'
 })
 
+// Scroll ke atas setiap perpindahan halaman
+router.afterEach(() => {
+  if (lenis) {
+    lenis.scrollTo(0, { immediate: true })
+  }
+})
+
 // Scroll Smooth
 let lenis;
 let rafId;

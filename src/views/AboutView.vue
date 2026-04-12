@@ -41,18 +41,18 @@
                     <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Blockbench</p>
                 </div>
 
-                <div class="border-2 p-3 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-5 flex flex-col items-center w-28">
-                    <div class="w-full flex items-center justify-center mb-1">
-                        <img src="../assets/images/figma.png" alt="" class="w-9" />
-                    </div>
-                    <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Figma</p>
-                </div>
-
                 <div class="border-2 p-3 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-5 flex flex-col items-center ">
                     <div class="w-full flex items-center justify-center mb-1">
                         <img src="../assets/images/mineimator.png" alt="" class="w-14" />
                     </div>
                     <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Mine-imator</p>
+                </div>
+
+                <div class="border-2 p-3 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-5 flex flex-col items-center w-28">
+                    <div class="w-full flex items-center justify-center mb-1">
+                        <img src="../assets/images/figma.png" alt="" class="w-9" />
+                    </div>
+                    <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Figma</p>
                 </div>
             </div>
 
