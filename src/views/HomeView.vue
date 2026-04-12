@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full pt-10 pb-20 md:py-0">
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full pt-10 pb-20 md:py-0 min-h-[calc(100vh-5rem)]">
     
     <!-- Left Section: Content -->
     <div class="flex-1 md:pr-10 mt-16 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left">

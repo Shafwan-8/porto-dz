@@ -54,13 +54,6 @@
                     </div>
                     <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Mine-imator</p>
                 </div>
-
-                <div class="border-2 p-3 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-5 flex flex-col items-center">
-                    <div class="w-full flex items-center justify-center mb-1">
-                        <img src="../assets/images/berhala.png" alt="" class="w-14" />
-                    </div>
-                    <p class="text-base text-[#3b3b3b] leading-relaxed max-w-2xl font-bold">Berhala 😹</p>
-                </div>
             </div>
 
         </div>
