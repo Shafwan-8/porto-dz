@@ -3,6 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView, useRouter } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import CustomCursor from './components/CustomCursor.vue'
 import Lenis from 'lenis'
 
 // Deteksi arah navigasi
@@ -49,6 +50,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="min-h-screen bg-[#fafafa] font-sans text-gray-900 flex flex-col items-center">
+    <CustomCursor />
     <Navbar />
 
     <main class="w-full mt-20 max-w-7xl flex-1 flex flex-col justify-center px-8 relative">
@@ -71,6 +73,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 
 /* Page Transition Animation */
 
