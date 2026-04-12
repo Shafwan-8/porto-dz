@@ -1,5 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+
+const BIRTH_YEAR  = 2007  // tahun lahir
+const START_YEAR  = 2024  // tahun mulai aktif berkarya
+
+const currentYear  = new Date().getFullYear()
+const age          = computed(() => currentYear - BIRTH_YEAR)
+const yearsActive  = computed(() => currentYear - START_YEAR)
 
 const polaroidRef = ref(null)
 
@@ -116,7 +123,7 @@ const onMouseLeave = () => {
                             <path d="M11 6h2v3h-2z" />
                             <path d="M7 9h10v3H7zM6 13h12v3H6zM4 17h16v3H4z" />
                         </svg>
-                        <span>19 years old</span>
+                        <span>{{ age }} years old</span>
                     </div>
                 </div>
               </div><!-- end polaroid card -->
@@ -126,7 +133,7 @@ const onMouseLeave = () => {
             <div class="w-72 sm:w-80 md:w-96 flex flex-col gap-3 mt-6">
                 <!-- Stat 1 -->
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
-                    <h3 class="text-2xl font-black">2+</h3>
+                    <h3 class="text-2xl font-black">{{ yearsActive }}+</h3>
                     <p class="text-sm font-medium text-gray-400 mt-1">Years active</p>
                 </div>
                 <!-- Stat 2 -->

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const email = 'yourmail@gmail.com'
+const email = 'dejet@gmail.com'
 const copied = ref(false)
 
 const copyEmail = () => {

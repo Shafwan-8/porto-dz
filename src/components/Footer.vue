@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
       </div>
 
       <!-- Center: copyright -->
-      <p class="text-xs text-gray-400 font-medium order-last md:order-0 text-center">
+      <p class="text-xs text-gray-400 font-medium order-last text-center">
         © {{ year }} <span class="font-bold text-[#1a1a1a]">DZXY</span>. All rights reserved.
       </p>
 
