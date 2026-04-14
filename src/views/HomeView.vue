@@ -38,7 +38,7 @@ import { RouterLink } from 'vue-router'
     <div class="flex-1 flex justify-center items-center mb-10 md:mb-0">
       <!-- "scale" membesarkan video secara visual TANPA merusak layout / menekan elemen sekitarnya -->
       <!-- "pointer-events-none" agar area transparan video tidak menutupi klik elemen lain -->
-      <video src="@/assets/videos/logoAnimate.mp4" autoplay loop muted playsinline class="mix-blend-multiply w-[300px] md:w-[400px] xl:w-[500px] scale-[2] md:scale-[1.8] lg:scale-[2.2] object-contain pointer-events-none"></video>
+      <video src="@/assets/videos/logoAnimate.webm" autoplay loop muted playsinline class="mix-blend-multiply w-[300px] md:w-[400px] xl:w-[500px] scale-[2] md:scale-[1.8] lg:scale-[2.2] object-contain pointer-events-none"></video>
     </div>
 
   </div>
