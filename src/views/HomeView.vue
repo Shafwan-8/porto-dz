@@ -27,15 +27,18 @@ import { RouterLink } from 'vue-router'
         <RouterLink to="/project" class="bg-[#242424] hover:bg-black text-white font-bold py-3 px-6 text-sm md:text-base transition-colors inline-block text-center min-w-[130px]">
           My Projects
         </RouterLink>
-        <RouterLink to="/contact" class="bg-transparent border-[3px] border-[#242424] text-[#1a1a1a] hover:bg-[#242424] hover:text-white font-bold py-3 px-6 text-sm md:text-base transition-colors inline-block text-center min-w-[130px]">
+        <RouterLink to="/contact" class="border-[3px] border-[#242424] text-[#1a1a1a] bg-linear-to-r from-[#242424] from-50% to-transparent to-50% bg-size-[201%_100%] bg-right hover:bg-left hover:text-white font-bold py-3 px-6 text-sm md:text-base transition-all duration-300 ease-out inline-block text-center min-w-[130px]">
           Contact
         </RouterLink>
       </div>
     </div>
 
     <!-- Right Section: Graphic/Logo -->
-    <div class="flex-1 flex justify-center  mb-10 md:mb-0">
-      <img src="@/assets/images/logo_1.png" alt="DZXY" class="w-40 sm:w-50 md:w-64 lg:w-[250px] object-contain drop-shadow-sm" />
+    <!-- Right Section: Graphic/Logo -->
+    <div class="flex-1 flex justify-center items-center mb-10 md:mb-0">
+      <!-- "scale" membesarkan video secara visual TANPA merusak layout / menekan elemen sekitarnya -->
+      <!-- "pointer-events-none" agar area transparan video tidak menutupi klik elemen lain -->
+      <video src="@/assets/videos/logoAnimate.mp4" autoplay loop muted playsinline class="mix-blend-multiply w-[300px] md:w-[400px] xl:w-[500px] scale-[2] md:scale-[1.8] lg:scale-[2.2] object-contain pointer-events-none"></video>
     </div>
 
   </div>

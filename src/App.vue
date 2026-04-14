@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
     <CustomCursor />
     <Navbar />
 
-    <main class="w-full mt-20 max-w-7xl flex-1 flex flex-col justify-center px-8 relative">
+    <main class="w-full mt-20 max-w-7xl flex-1 flex flex-col justify-center px-8 relative overflow-hidden">
       <RouterView v-slot="{ Component }">
         <Transition :name="transitionName" mode="out-in">
           <component :is="Component" />
