@@ -49,11 +49,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#fafafa] font-sans text-gray-900 flex flex-col items-center">
+  <div class="min-h-screen font-sans text-gray-900 flex flex-col items-center transition-colors duration-300" :class="$route.meta.hideDefaultLayout ? 'bg-[#1E1E1E]' : 'bg-[#fafafa]'">
     <CustomCursor />
-    <Navbar />
+    <Navbar v-if="!$route.meta.hideDefaultLayout" />
 
-    <main class="w-full mt-20 max-w-7xl flex-1 flex flex-col justify-center px-8 relative overflow-hidden">
+    <main :class="$route.meta.hideDefaultLayout ? 'w-full flex-1 relative overflow-hidden' : 'w-full mt-20 max-w-7xl flex-1 flex flex-col justify-center px-8 relative overflow-hidden'">
       <RouterView v-slot="{ Component }">
         <Transition :name="transitionName" mode="out-in">
           <component :is="Component" />
@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
       </RouterView>
     </main>
 
-    <Footer />
+    <Footer v-if="!$route.meta.hideDefaultLayout" />
   </div>
 </template>
 
