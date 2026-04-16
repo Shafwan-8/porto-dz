@@ -24,7 +24,7 @@ import { RouterLink } from 'vue-router'
       </p>
 
       <div class="flex flex-wrap justify-center md:justify-start gap-4">
-        <RouterLink to="/project" class="bg-[#242424] hover:bg-black text-white font-bold py-3 px-6 text-sm md:text-base transition-colors inline-block text-center min-w-[130px]">
+        <RouterLink to="/project" class="border-[3px] border-[#242424] text-white bg-linear-to-r from-transparent from-50% to-[#242424] to-50% bg-size-[201%_100%] bg-right hover:bg-left hover:text-[#1a1a1a] font-bold py-3 px-6 text-sm md:text-base transition-all duration-300 ease-out inline-block text-center min-w-[130px]">
           My Projects
         </RouterLink>
         <RouterLink to="/contact" class="border-[3px] border-[#242424] text-[#1a1a1a] bg-linear-to-r from-[#242424] from-50% to-transparent to-50% bg-size-[201%_100%] bg-right hover:bg-left hover:text-white font-bold py-3 px-6 text-sm md:text-base transition-all duration-300 ease-out inline-block text-center min-w-[130px]">
