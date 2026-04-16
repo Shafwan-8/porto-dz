@@ -170,15 +170,15 @@ onUnmounted(() => {
     <div class="fixed bottom-0 left-0 w-full h-40 bg-linear-to-t from-[#1E1E1E] via-[#1E1E1E]/80 to-transparent z-30 pointer-events-none"></div>
     
     <!-- Overlay Modal -->
-    <div v-show="isOverlayOpen" class="fixed inset-0 z-[100] flex justify-center items-center pointer-events-auto">
+    <div v-show="isOverlayOpen" class="fixed inset-0 z-100 flex justify-center items-center pointer-events-auto">
       <!-- Backdrop with blur -->
       <div class="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer transition-opacity" @click="closeOverlay"></div>
       
       <!-- Center Image Container -->
-      <div class="relative z-10 flex border-[4px] border-[#2a2a2a] shadow-[0_0_50px_rgba(0,0,0,0.8)] mx-4">
+      <div class="relative z-10 flex border-4 border-[#2a2a2a] shadow-[0_0_50px_rgba(0,0,0,0.8)] mx-4">
         
         <!-- Close Button (Pojok Kanan Atas Foto) -->
-        <button @click="closeOverlay" class="absolute -top-4 -right-4 md:-top-5 md:-right-5 text-white hover:text-red-500 z-[60] bg-[#1a1a1a] rounded-full cursor-pointer transition-all hover:rotate-90 hover:scale-110 shadow-xl border-[2px] border-[#333] p-1.5 flex items-center justify-center">
+        <button @click="closeOverlay" class="absolute -top-4 -right-4 md:-top-5 md:-right-5 text-white hover:text-red-500 z-60 bg-[#1a1a1a] rounded-full cursor-pointer transition-all hover:rotate-90 hover:scale-110 shadow-xl border-2 border-[#333] p-1.5 flex items-center justify-center">
           <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
