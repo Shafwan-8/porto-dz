@@ -2,6 +2,19 @@
 import { RouterLink } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const isOverlayOpen = ref(false);
+const selectedImage = ref('');
+
+const openOverlay = (img) => {
+  selectedImage.value = img;
+  isOverlayOpen.value = true;
+};
+
+const closeOverlay = () => {
+  isOverlayOpen.value = false;
+  selectedImage.value = '';
+};
+
 import img1 from '@/assets/images/mineimator.png'
 import img2 from '@/assets/images/berhala.png'
 import img3 from '@/assets/images/figma.png'
@@ -100,7 +113,7 @@ onUnmounted(() => {
       <!-- Kolom 1 -->
       <div class="w-1/2 md:w-1/4 lg:w-1/6 px-1.5 md:px-2 lg:px-2.5 mt-0 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[0] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col1" :key="'c1'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col1" :key="'c1'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.6] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -109,7 +122,7 @@ onUnmounted(() => {
        <!-- Kolom 2 -->
       <div class="w-1/2 md:w-1/4 lg:w-1/6 px-1.5 md:px-2 lg:px-2.5 -mt-20 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[1] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col2" :key="'c2'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col2" :key="'c2'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.4] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -118,7 +131,7 @@ onUnmounted(() => {
        <!-- Kolom 3 -->
       <div class="hidden md:flex md:w-1/4 lg:w-1/6 px-1.5 md:px-2 lg:px-2.5 -mt-8 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[2] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col3" :key="'c3'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col3" :key="'c3'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.6] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -127,7 +140,7 @@ onUnmounted(() => {
        <!-- Kolom 4 -->
       <div class="hidden md:flex md:w-1/4 lg:w-1/6 px-1.5 md:px-2 lg:px-2.5 -mt-32 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[3] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col4" :key="'c4'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col4" :key="'c4'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.4] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -136,7 +149,7 @@ onUnmounted(() => {
        <!-- Kolom 5 -->
       <div class="hidden lg:flex w-1/6 px-1.5 md:px-2 lg:px-2.5 -mt-16 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[4] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col5" :key="'c5'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col5" :key="'c5'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.6] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -145,7 +158,7 @@ onUnmounted(() => {
        <!-- Kolom 6 -->
       <div class="hidden lg:flex w-1/6 px-1.5 md:px-2 lg:px-2.5 -mt-40 pointer-events-auto will-change-transform">
         <div :ref="(el) => colRefs[5] = el" class="w-full flex flex-col">
-          <div v-for="(img, idx) in col6" :key="'c6'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer">
+          <div v-for="(img, idx) in col6" :key="'c6'+idx" class="w-full relative bg-[#2a2a2a] overflow-hidden aspect-square rounded-none shadow-xl border border-[#2a2a2a] mb-3 md:mb-4 lg:mb-5 cursor-pointer" @click="openOverlay(img)">
               <img :src="img" class="w-full h-full object-cover filter brightness-[0.4] hover:brightness-110 transition-all duration-500 hover:scale-110" />
           </div>
         </div>
@@ -155,5 +168,25 @@ onUnmounted(() => {
 
     <!-- Gradient Fading bawah -->
     <div class="fixed bottom-0 left-0 w-full h-40 bg-linear-to-t from-[#1E1E1E] via-[#1E1E1E]/80 to-transparent z-30 pointer-events-none"></div>
+    
+    <!-- Overlay Modal -->
+    <div v-show="isOverlayOpen" class="fixed inset-0 z-[100] flex justify-center items-center pointer-events-auto">
+      <!-- Backdrop with blur -->
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer transition-opacity" @click="closeOverlay"></div>
+      
+      <!-- Center Image Container -->
+      <div class="relative z-10 flex border-[4px] border-[#2a2a2a] shadow-[0_0_50px_rgba(0,0,0,0.8)] mx-4">
+        
+        <!-- Close Button (Pojok Kanan Atas Foto) -->
+        <button @click="closeOverlay" class="absolute -top-4 -right-4 md:-top-5 md:-right-5 text-white hover:text-red-500 z-[60] bg-[#1a1a1a] rounded-full cursor-pointer transition-all hover:rotate-90 hover:scale-110 shadow-xl border-[2px] border-[#333] p-1.5 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <img :src="selectedImage" class="max-w-[90vw] max-h-[85vh] object-contain block" />
+      </div>
+    </div>
+
   </section>
 </template>
