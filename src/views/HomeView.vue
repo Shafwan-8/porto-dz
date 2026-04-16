@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full pt-10 pb-20 md:py-0 min-h-[calc(100vh-5rem)]">
     
     <!-- Left Section: Content -->
-    <div class="flex-1 md:pr-10 mt-16 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left">
+    <div class="flex-1 md:pr-10 mt-16 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left relative z-10">
       <!-- Decorative Bars -->
       <div class="flex gap-2 mb-7">
         <div class="h-3 w-14 bg-[#232323]"></div>
@@ -34,11 +34,10 @@ import { RouterLink } from 'vue-router'
     </div>
 
     <!-- Right Section: Graphic/Logo -->
-    <!-- Right Section: Graphic/Logo -->
-    <div class="flex-1 flex justify-center items-center mb-10 md:mb-0">
+    <div class="flex-1 flex justify-center items-center mb-10 md:mb-0 relative z-0">
       <!-- "scale" membesarkan video secara visual TANPA merusak layout / menekan elemen sekitarnya -->
       <!-- "pointer-events-none" agar area transparan video tidak menutupi klik elemen lain -->
-      <video src="@/assets/videos/logoAnimate.webm" autoplay loop muted playsinline class="mix-blend-multiply w-[300px] md:w-[400px] xl:w-[500px] scale-[2] md:scale-[1.8] lg:scale-[2.2] object-contain pointer-events-none"></video>
+      <video src="../assets/videos/logo.webm" autoplay loop muted playsinline class="w-[300px] md:w-[400px] xl:w-[500px] scale-[2] md:scale-[1.8] lg:scale-[2.2] object-contain pointer-events-none"></video>
     </div>
 
   </div>
