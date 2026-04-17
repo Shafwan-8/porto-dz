@@ -18,7 +18,7 @@ const goToSkins = () => {
 </script>
 
 <template>
-  <section class="min-h-screen flex flex-col items-center justify-center px-8 gap-6 mt-10 w-full">
+  <section class="min-h-screen flex flex-col items-center justify-center px-8 gap-6 w-full">
     
     <!-- Header -->
     <div class="text-center space-y-3">
@@ -55,7 +55,7 @@ const goToSkins = () => {
             <polygon points="20,16 20,28 23,24 26,29 28,28 25,23 29,23" fill="#1a1a1a" stroke="#e5e7eb" stroke-width="1.5" class="group-hover:stroke-[#d1d5db] transition-colors duration-300"/>
           </svg>
         </div>
-        <h2 class="text-xl md:text-2xl font-bold text-center">Rendering</h2>
+        <h2 class="text-xl md:text-2xl font-bold text-center">3D Rendering</h2>
       </RouterLink>
 
     </div>

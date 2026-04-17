@@ -22,7 +22,7 @@ onUnmounted(() => {
 
 <template>
   <div 
-    class="fixed inset-0 z-[9999] bg-[#1E1E1E] flex justify-center items-center pointer-events-none transition-transform duration-700 ease-in-out"
+    class="fixed inset-0 z-9999 bg-[#1E1E1E] flex justify-center items-center pointer-events-none transition-transform duration-700 ease-in-out"
     :class="isGlobalLoading ? 'translate-y-0' : 'translate-y-full'"
   >
     <div class="text-white text-2xl md:text-4xl font-bold tracking-widest font-['Poppins']">
