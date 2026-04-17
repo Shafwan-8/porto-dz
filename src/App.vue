@@ -4,6 +4,7 @@ import { RouterView, useRouter } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import CustomCursor from './components/CustomCursor.vue'
+import LoadingOverlay from './components/LoadingOverlay.vue'
 import Lenis from 'lenis'
 
 // Deteksi arah navigasi
@@ -62,6 +63,8 @@ onBeforeUnmount(() => {
     </main>
 
     <Footer v-if="!$route.meta.hideDefaultLayout" />
+
+    <LoadingOverlay />
   </div>
 </template>
 
