@@ -18,7 +18,7 @@ const goToSkins = () => {
 </script>
 
 <template>
-  <section class="min-h-screen flex flex-col items-center justify-center px-8 gap-6 w-full">
+  <section class="min-h-screen flex flex-col items-center mt-16 gap-6 w-full">
     
     <!-- Header -->
     <div class="text-center space-y-3">
