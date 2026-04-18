@@ -15,6 +15,13 @@ const goToSkins = () => {
         router.push('/project/skins')
     }, 700) // matches our duration-700 from LoadingOverlay
 }
+
+const goToRendering = () => {
+    isGlobalLoading.value = true
+    setTimeout(() => {
+        router.push('/project/rendering')
+    }, 700) // matches our duration-700 from LoadingOverlay
+}
 </script>
 
 <template>
@@ -43,7 +50,7 @@ const goToSkins = () => {
       </a>
 
       <!-- Category 2: Rendering -->
-      <RouterLink to="/project/rendering" class="group flex flex-col items-center justify-center bg-[#e5e7eb] hover:bg-[#d1d5db] transition-all duration-300 p-16 md:p-20 text-[#1a1a1a]">
+      <a @click.prevent="goToRendering" href="/project/rendering" class="group flex flex-col items-center justify-center bg-[#e5e7eb] hover:bg-[#d1d5db] transition-all duration-300 p-16 md:p-20 text-[#1a1a1a]">
         <!-- Isometric Box with Cursor Arrow Icon -->
         <div class="mb-6 transform group-hover:scale-110 transition-transform duration-300">
           <svg width="48" height="48" viewBox="0 0 32 32" fill="currentColor">
@@ -56,7 +63,7 @@ const goToSkins = () => {
           </svg>
         </div>
         <h2 class="text-xl md:text-2xl font-bold text-center">3D Rendering</h2>
-      </RouterLink>
+      </a>
 
     </div>
 
