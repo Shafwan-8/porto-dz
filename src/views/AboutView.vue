@@ -142,8 +142,8 @@ const onMouseLeave = () => {
                     <p class="text-sm font-medium text-gray-400 mt-1">Skins created</p>
                 </div>
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
-                    <h3 class="text-2xl font-black">500+</h3>
-                    <p class="text-sm font-medium text-gray-400 mt-1">Skins created</p>
+                    <h3 class="text-2xl font-black">10+</h3>
+                    <p class="text-sm font-medium text-gray-400 mt-1">Renders created</p>
                 </div>
             </div>
 
