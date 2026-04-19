@@ -41,24 +41,22 @@ import img14 from '@/assets/images/renders/14.png'
 import img15 from '@/assets/images/renders/15.png'
 import img16 from '@/assets/images/renders/16.png'
 
-const set1 = [img1, img10, img3, img4];
-const set2 = [img5, img6, img7, img8];
-const set3 = [img9, img2, img11, img12];
-const set4 = [img13, img14, img15, img16];
+const set1 = [img1, img2, img3, img4, img5];
+const set2 = [img6, img7, img8, img9, img10];
+const set3 = [img11, img12, img13, img14, img15, img16];
 
 // Digabungkan 4X agar infinite scroll selalu aman dan sempurna untuk lebar layar berapapun
-const row1 = [...set4, ...set4, ...set4, ...set4];
+const row1 = [...set3, ...set3, ...set3, ...set3];
 const row2 = [...set2, ...set2, ...set2, ...set2];
-const row3 = [...set3, ...set3, ...set3, ...set3];
-const row4 = [...set1, ...set1, ...set1, ...set1];
+const row3 = [...set1, ...set1, ...set1, ...set1];
 
 const rowRefs = ref([]);
 
 // Setup variabel untuk Mesin Auto Scroll + Parallax Horizontal 60FPS murni JS
-const offsets = [0, 80, 160, 40]; // Staggering awal agar posisi tidak sejajar (lebih natural)
-const autoSpeeds = [0.8, 0.4, 0.9, 0.3]; // Kecepatan gerak otomatis per-frame, berbeda antar baris
-const scrollFactors = [1.2, 0.6, 1.5, 0.4]; // Efek dorongan dari kontrol Mouse Vertical Scroll
-const directions = ['rtl', 'ltr', 'rtl', 'ltr']; // Selang-seling arah
+const offsets = [0, 80, 160]; // Staggering awal agar posisi tidak sejajar (lebih natural)
+const autoSpeeds = [0.2, 0.4, 0.8]; // Kecepatan gerak otomatis per-frame, berbeda antar baris
+const scrollFactors = [1.2, 0.6, 1.5]; // Efek dorongan dari kontrol Mouse Vertical Scroll
+const directions = ['rtl', 'ltr', 'rtl']; // Selang-seling arah
 
 let rafId;
 let lastScrollY = 0;
@@ -69,15 +67,16 @@ const animationLoop = () => {
     const delta = currentScrollY - lastScrollY;
     lastScrollY = currentScrollY;
 
-    // Terapkan ke 4 baris tanpa reaktif Vue (Update Direct DOM untuk perfoma GPU)
-    for (let i = 0; i < 4; i++) {
+    // Terapkan ke 3 baris tanpa reaktif Vue (Update Direct DOM untuk perfoma GPU)
+    for (let i = 0; i < 3; i++) {
         const el = rowRefs.value[i];
         if (!el) continue;
 
         // Bergerak auto + dorongan manual
         offsets[i] += autoSpeeds[i] + (delta * scrollFactors[i]);
 
-        // Cari titik balik: 1 set duplikasi persis 1/4 dari lebar keseluruhan (karena kita copy 4x di JS)
+        // Cari titik balik: 1 set duplikasi persis 1/4 dari lebar keseluruhan (karena array digandakan 4x: [...set, ...set, ...set, ...set])
+        // Angka pembagi ini TIDAK bergantung pada jumlah baris, melainkan jumlah duplikasi data di array agar ukurannya presisi saat nge-loop.
         const loopPoint = el.scrollWidth / 4;
         
         if (loopPoint > 0) {
@@ -97,7 +96,7 @@ const animationLoop = () => {
 };
 
 onMounted(() => {
-    const allUniqueImages = [...set1, ...set2, ...set3, ...set4];
+    const allUniqueImages = [...set1, ...set2, ...set3];
     let loadedCount = 0;
     const totalImages = allUniqueImages.length;
     
@@ -152,7 +151,7 @@ onUnmounted(() => {
         <!-- Baris 1: Kanan ke Kiri (RTL) -->
         <div class="w-full flex mb-2 md:mb-3 lg:mb-4 pointer-events-auto will-change-transform opacity-95">
             <div :ref="(el) => rowRefs[0] = el" class="flex flex-row w-max">
-                <div v-for="(img, idx) in row1" :key="'r1'+idx" class="w-[60vw] sm:w-[40vw] md:w-[28vw] lg:w-[18vw] 2xl:w-[20vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
+                <div v-for="(img, idx) in row1" :key="'r1'+idx" class="w-[60vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[22vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
                     <img :src="img" draggable="false" @contextmenu.prevent class="select-none w-full h-full object-cover filter brightness-[0.7] hover:brightness-110 transition-all duration-500 hover:scale-110" />
                 </div>
             </div>
@@ -161,7 +160,7 @@ onUnmounted(() => {
         <!-- Baris 2: Kiri ke Kanan (LTR) -->
         <div class="w-full flex mb-2 md:mb-3 lg:mb-4 pointer-events-auto will-change-transform opacity-95">
             <div :ref="(el) => rowRefs[1] = el" class="flex flex-row w-max">
-                <div v-for="(img, idx) in row2" :key="'r2'+idx" class="w-[60vw] sm:w-[40vw] md:w-[28vw] lg:w-[18vw] 2xl:w-[20vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
+                <div v-for="(img, idx) in row2" :key="'r2'+idx" class="w-[60vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[22vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
                     <img :src="img" draggable="false" @contextmenu.prevent class="select-none w-full h-full object-cover filter brightness-[0.5] hover:brightness-110 transition-all duration-500 hover:scale-110" />
                 </div>
             </div>
@@ -170,17 +169,8 @@ onUnmounted(() => {
         <!-- Baris 3: Kanan ke Kiri (RTL) -->
         <div class="w-full flex mb-2 md:mb-3 lg:mb-4 pointer-events-auto will-change-transform opacity-95">
             <div :ref="(el) => rowRefs[2] = el" class="flex flex-row w-max">
-                <div v-for="(img, idx) in row3" :key="'r3'+idx" class="w-[60vw] sm:w-[40vw] md:w-[28vw] lg:w-[18vw] 2xl:w-[20vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
+                <div v-for="(img, idx) in row3" :key="'r3'+idx" class="w-[60vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[22vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
                     <img :src="img" draggable="false" @contextmenu.prevent class="select-none w-full h-full object-cover filter brightness-[0.7] hover:brightness-110 transition-all duration-500 hover:scale-110" />
-                </div>
-            </div>
-        </div>
-
-        <!-- Baris 4: Kiri ke Kanan (LTR) -->
-        <div class="w-full flex pointer-events-auto will-change-transform opacity-95">
-            <div :ref="(el) => rowRefs[3] = el" class="flex flex-row w-max">
-                <div v-for="(img, idx) in row4" :key="'r4'+idx" class="w-[60vw] sm:w-[40vw] md:w-[28vw] lg:w-[18vw] 2xl:w-[20vw] aspect-video relative bg-[#2a2a2a] overflow-hidden rounded-none shadow-xl border border-[#2a2a2a] mx-1.5 md:mx-2 lg:mx-2.5 cursor-pointer" @click="openOverlay(img)">
-                    <img :src="img" draggable="false" @contextmenu.prevent class="select-none w-full h-full object-cover filter brightness-[0.4] hover:brightness-110 transition-all duration-500 hover:scale-110" />
                 </div>
             </div>
         </div>
@@ -188,7 +178,7 @@ onUnmounted(() => {
     </div>
 
     <!-- Gradient Fading bawah -->
-    <div class="fixed bottom-0 left-0 w-full h-40 bg-linear-to-t from-[#1E1E1E] via-[#1E1E1E]/80 to-transparent z-30 pointer-events-none"></div>
+    <div class="fixed bottom-0 left-0 w-full h-40 bg-linear-to-t from-[#1E1E1E] via-[#1E1E1E]/70 to-transparent z-30 pointer-events-none"></div>
 
     <!-- Overlay Modal -->
     <div v-show="isOverlayOpen" class="fixed inset-0 z-100 flex justify-center items-center pointer-events-auto">
