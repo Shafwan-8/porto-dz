@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const BIRTH_YEAR  = 2007  // tahun lahir
+const BIRTH_YEAR  = 2008  // tahun lahir
 const START_YEAR  = 2024  // tahun mulai aktif berkarya
 
 const currentYear  = new Date().getFullYear()
@@ -52,7 +52,7 @@ const onMouseLeave = () => {
         
             
             <p class="text-base md:text-lg lg:text-xl text-[#3b3b3b] leading-relaxed max-w-2xl font-medium mb-5">
-                A 3D Artist and Minecraft Thumbnail Designer from Makassar. I dedicate my time to creating strong visual identities, whether for content creators or specific freelance Minecraft skin projects.
+                A 3D Artist and Minecraft Skin Designer from Makassar. I dedicate my time to creating strong visual identities, whether for content creators or specific freelance Minecraft skin projects.
             </p>
             
             <p class="text-base md:text-lg lg:text-xl text-[#3b3b3b] leading-relaxed max-w-2xl font-medium">
@@ -142,7 +142,7 @@ const onMouseLeave = () => {
                     <p class="text-sm font-medium text-gray-400 mt-1">Skins created</p>
                 </div>
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
-                    <h3 class="text-2xl font-black">10+</h3>
+                    <h3 class="text-2xl font-black">50+</h3>
                     <p class="text-sm font-medium text-gray-400 mt-1">Renders created</p>
                 </div>
             </div>
