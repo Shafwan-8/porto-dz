@@ -106,7 +106,7 @@ const onMouseLeave = () => {
                 style="will-change: transform;"
               >
                 <div class="bg-[#1a1a1a] w-full aspect-square flex items-center justify-center overflow-hidden">
-                    <img src="@/assets/images/logo_2.png" alt="DZXY" class="w-2/3 h-2/3 object-contain" />
+                    <img src="@/assets/images/pfp.png" alt="DZXY" class="w-full h-full object-cover" />
                 </div>
                 
                 <!-- Info text at bottom of polaroid -->
