@@ -24,26 +24,39 @@ const closeOverlay = () => {
   selectedImage.value = '';
 };
 
-import img1 from '@/assets/images/renders/1.png'
-import img2 from '@/assets/images/renders/2.png'
-import img3 from '@/assets/images/renders/3.png'
-import img4 from '@/assets/images/renders/4.png'
-import img5 from '@/assets/images/renders/5.png'
-import img6 from '@/assets/images/renders/6.png'
-import img7 from '@/assets/images/renders/7.png'
-import img8 from '@/assets/images/renders/8.png'
-import img9 from '@/assets/images/renders/9.png'
-import img10 from '@/assets/images/renders/10.png'
-import img11 from '@/assets/images/renders/11.png'
-import img12 from '@/assets/images/renders/12.png'
-import img13 from '@/assets/images/renders/13.png'
-import img14 from '@/assets/images/renders/14.png'
-import img15 from '@/assets/images/renders/15.png'
-import img16 from '@/assets/images/renders/16.png'
+import img1 from '@/assets/images/renders/1.webp'
+import img2 from '@/assets/images/renders/2.webp'
+import img3 from '@/assets/images/renders/3.webp'
+import img4 from '@/assets/images/renders/4.webp'
+import img5 from '@/assets/images/renders/5.webp'
+import img6 from '@/assets/images/renders/6.webp'
+import img7 from '@/assets/images/renders/7.webp'
+import img8 from '@/assets/images/renders/8.webp'
+import img9 from '@/assets/images/renders/9.webp'
+import img10 from '@/assets/images/renders/10.webp'
+import img11 from '@/assets/images/renders/11.webp'
+import img12 from '@/assets/images/renders/12.webp'
+import img13 from '@/assets/images/renders/13.webp'
+import img14 from '@/assets/images/renders/14.webp'
+import img15 from '@/assets/images/renders/15.webp'
+import img16 from '@/assets/images/renders/16.webp'
+import img17 from '@/assets/images/renders/17.webp'
+import img18 from '@/assets/images/renders/18.webp'
+import img19 from '@/assets/images/renders/19.webp'
+import img20 from '@/assets/images/renders/20.webp'
+import img21 from '@/assets/images/renders/21.webp'
+import img22 from '@/assets/images/renders/22.webp'
+import img23 from '@/assets/images/renders/23.webp'
+import img24 from '@/assets/images/renders/24.webp'
+import img25 from '@/assets/images/renders/25.webp'
+import img26 from '@/assets/images/renders/26.webp'
+import img27 from '@/assets/images/renders/27.webp'
+import img28 from '@/assets/images/renders/28.webp'
 
-const set1 = [img1, img2, img3, img4, img5];
-const set2 = [img6, img7, img8, img9, img10];
-const set3 = [img11, img12, img13, img14, img15, img16];
+
+const set1 = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+const set2 = [img11, img12, img13, img14, img15, img16, img17, img18, img19, img20];
+const set3 = [img21, img22, img23, img24, img25, img26, img27, img28];
 
 // Digabungkan 4X agar infinite scroll selalu aman dan sempurna untuk lebar layar berapapun
 const row1 = [...set3, ...set3, ...set3, ...set3];
