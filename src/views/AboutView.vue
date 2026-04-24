@@ -1,8 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const BIRTH_YEAR  = 2008  // tahun lahir
-const START_YEAR  = 2024  // tahun mulai aktif berkarya
+const BIRTH_YEAR  = 2008
+const START_YEAR  = 2024
 
 const currentYear  = new Date().getFullYear()
 const age          = computed(() => currentYear - BIRTH_YEAR)
@@ -15,13 +15,12 @@ const onMouseMove = (e) => {
   if (!card) return
 
   const rect = card.getBoundingClientRect()
-  const x = (e.clientX - rect.left) / rect.width   // 0 → 1
-  const y = (e.clientY - rect.top)  / rect.height  // 0 → 1
+  const x = (e.clientX - rect.left) / rect.width
+  const y = (e.clientY - rect.top)  / rect.height
 
-  const rotateX = (y - 0.5) * -18  // -9deg → +9deg
-  const rotateY = (x - 0.5) *  18  // -9deg → +9deg
+  const rotateX = (y - 0.5) * -18
+  const rotateY = (x - 0.5) *  18
 
-  // Transition singkat agar terasa real-time mengikuti kursor
   card.style.transition = 'transform 0.05s linear'
   card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`
 }
@@ -30,7 +29,6 @@ const onMouseLeave = () => {
   const card = polaroidRef.value
   if (!card) return
 
-  // cubic-bezier kustom mensimulasikan efek spring/bouncy untuk snap-back
   card.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)'
   card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)'
 }
@@ -39,12 +37,9 @@ const onMouseLeave = () => {
 <template>
     <div class="flex flex-col md:flex-row w-full pt-10 pb-2 md:py-0 mb-16">
     
-        <!-- Left Section: Content -->
         <div class="md:w-[50%] mt-8 md:mt-16 flex flex-col items-center md:items-start text-left">
 
-            <!-- intro -->
             <div class="border-2 p-5 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-10">
-            <!-- Decorative Bars -->
             <div class="flex gap-2 mb-5 flex-row items-center">
                 <div class="h-3 w-14 bg-[#232323] me-2"></div>
                 <p class="text-1xl md:text-2xl lg:text-3xl font-black text-[#1a1a1a] max-w-2xl">Hi! I'm Dizz</p>
@@ -60,13 +55,11 @@ const onMouseLeave = () => {
             </p>
             </div>
 
-            <!-- Decorative Bars -->
             <div class="flex gap-2 mb-5 flex-row items-center">
                 <div class="h-3 w-14 bg-[#232323] me-2"></div>
                 <p class="text-1xl md:text-2xl lg:text-3xl font-black text-[#1a1a1a] max-w-2xl">Software Proficiency</p>
             </div>
             
-            <!-- software proficiency -->
             <div class="flex flex-row gap-5 flex-wrap justify-center md:justify-start">
                 <div class="border-2 p-3 hover:shadow-[8px_8px_0_0_#1a1a1a] transition-all duration-300 ease-out mb-5 flex flex-col items-center">
                     <div class="w-full flex items-center justify-center mb-1">
@@ -93,10 +86,8 @@ const onMouseLeave = () => {
 
         </div>
 
-        <!-- Right Section: Graphic/Logo & Stats -->
         <div class="flex-1 flex flex-col justify-center md:justify-start md:mt-16 items-center md:items-end mb-10 md:mb-0">
             
-            <!-- Polaroid: perspective di parent agar tidak terganggu transform animasi -->
             <div style="perspective: 900px;">
               <div
                 ref="polaroidRef"
@@ -108,8 +99,6 @@ const onMouseLeave = () => {
                 <div class="bg-[#1a1a1a] w-full aspect-square flex items-center justify-center overflow-hidden">
                     <img src="@/assets/images/logo_2.png" alt="DZXY" class="w-2/3 h-2/3 object-contain" />
                 </div>
-                
-                <!-- Info text at bottom of polaroid -->
                 <div class="mt-4 mb-2 flex justify-between items-center text-[#1a1a1a] text-xs sm:text-sm font-normal px-2">
                     <div class="flex items-center gap-1.5">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-3 sm:w-4 h-3 sm:h-4">
@@ -126,17 +115,14 @@ const onMouseLeave = () => {
                         <span>{{ age }} years old</span>
                     </div>
                 </div>
-              </div><!-- end polaroid card -->
-            </div><!-- end perspective wrapper -->
+              </div>
+            </div>
 
-            <!-- Stats Container -->
             <div class="w-72 sm:w-80 md:w-96 flex flex-col gap-3 mt-6">
-                <!-- Stat 1 -->
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
                     <h3 class="text-2xl font-black">{{ yearsActive }}+</h3>
                     <p class="text-sm font-medium text-gray-400 mt-1">Years active</p>
                 </div>
-                <!-- Stat 2 -->
                 <div class="bg-[#1a1a1a] text-center text-white py-2 px-4 shadow-sm border border-[#2a2a2a]">
                     <h3 class="text-2xl font-black">500+</h3>
                     <p class="text-sm font-medium text-gray-400 mt-1">Skins created</p>
@@ -146,8 +132,6 @@ const onMouseLeave = () => {
                     <p class="text-sm font-medium text-gray-400 mt-1">Renders created</p>
                 </div>
             </div>
-
         </div>
-
   </div>
 </template>

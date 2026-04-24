@@ -7,7 +7,6 @@ import CustomCursor from './components/CustomCursor.vue'
 import LoadingOverlay from './components/LoadingOverlay.vue'
 import Lenis from 'lenis'
 
-// Deteksi arah navigasi
 const transitionName = ref('slide-left')
 const router = useRouter()
 
@@ -17,14 +16,12 @@ router.beforeEach((to, from) => {
   transitionName.value = toOrder > fromOrder ? 'slide-left' : 'slide-right'
 })
 
-// Scroll ke atas setiap perpindahan halaman
 router.afterEach(() => {
   if (lenis) {
     lenis.scrollTo(0, { immediate: true })
   }
 })
 
-// Scroll Smooth
 let lenis;
 let rafId;
 
@@ -69,7 +66,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style>
-/* Add Poppins font for the matching thick exact look from the design */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 html, body {
   font-family: 'Poppins', sans-serif;
@@ -78,9 +74,6 @@ html, body {
 }
 
 
-/* Page Transition Animation */
-
-/* Maju: halaman baru masuk dari kanan, halaman lama keluar ke kiri */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
@@ -97,7 +90,6 @@ html, body {
   transform: translateX(-40px);
 }
 
-/* Mundur: halaman baru masuk dari kiri, halaman lama keluar ke kanan */
 .slide-right-enter-from {
   opacity: 0;
   transform: translateX(-40px);
