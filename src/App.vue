@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView, useRouter } from 'vue-router'
+import { Analytics } from '@vercel/analytics/vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import CustomCursor from './components/CustomCursor.vue'
@@ -48,6 +49,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="min-h-screen font-sans text-gray-900 flex flex-col items-center transition-colors duration-300" :class="$route.meta.hideDefaultLayout ? 'bg-[#1E1E1E]' : 'bg-[#fafafa]'">
+    <Analytics />
     <CustomCursor />
     <Navbar v-if="!$route.meta.hideDefaultLayout" />
 
