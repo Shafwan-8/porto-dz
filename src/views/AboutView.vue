@@ -1,12 +1,22 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const BIRTH_YEAR  = 2008
-const START_YEAR  = 2024
+const BIRTH_DATE = new Date('2007-08-28')
+const START_YEAR = 2024
 
-const currentYear  = new Date().getFullYear()
-const age          = computed(() => currentYear - BIRTH_YEAR)
-const yearsActive  = computed(() => currentYear - START_YEAR)
+const age = computed(() => {
+  const today = new Date()
+  let calculatedAge = today.getFullYear() - BIRTH_DATE.getFullYear()
+  const monthDiff = today.getMonth() - BIRTH_DATE.getMonth()
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < BIRTH_DATE.getDate())) {
+    calculatedAge--
+  }
+  return calculatedAge
+})
+
+const currentYear = new Date().getFullYear()
+const yearsActive = computed(() => currentYear - START_YEAR)
 
 const polaroidRef = ref(null)
 
