@@ -45,9 +45,7 @@ import img18 from '@/assets/images/renders/18.webp'
 import img19 from '@/assets/images/renders/19.webp'
 import img20 from '@/assets/images/renders/20.webp'
 import img21 from '@/assets/images/renders/21.webp'
-import img22 from '@/assets/images/renders/22.webp'
 import img23 from '@/assets/images/renders/23.webp'
-import img24 from '@/assets/images/renders/24.webp'
 import img25 from '@/assets/images/renders/25.webp'
 import img26 from '@/assets/images/renders/26.webp'
 import img27 from '@/assets/images/renders/27.webp'
@@ -56,7 +54,7 @@ import img28 from '@/assets/images/renders/28.webp'
 
 const set1 = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 const set2 = [img11, img12, img13, img14, img15, img16, img17, img18, img19, img20];
-const set3 = [img21, img22, img23, img24, img25, img26, img27, img28];
+const set3 = [img21, img23, img25, img26, img27, img28];
 
 const row1 = [...set3, ...set3, ...set3, ...set3];
 const row2 = [...set2, ...set2, ...set2, ...set2];
